@@ -10,21 +10,34 @@ const Hero = () => {
     }
 
   return (
-    <div>
-        <div className=''>
-            <h1 className='font-poppins font-extrabold text-4xl'>
+    <div className='flex flex-row px-72 py-36'>
+        <div className='flex-1 w-1/2 bg-orange-400* space-y-4'>
+            <h1 className='font-extrabold text-4xl'>
                 Viaja, Conoce, Disfruta
             </h1>
 
-            <p className='font-poppins text-base'>
-                Somos tu agencia de viajes de confianza, conoce el mundo con nosotros. Explora destinos extraordinarios y crea recuerdos inolvidables!
+            <p className='text-base'>
+                Somos tu agencia de viajes de confianza, conoce el mundo con nosotros. <br/>
+                Explora destinos extraordinarios y crea recuerdos inolvidables!
             </p>
 
             <CustomButton 
                 title="Explora nuestros tours"
-                containerStyles="bg-primary-green text-black text-xs font-semibold rounded mt-10"
+                containerStyles="bg-primary-green text-black text-xs font-semibold rounded"
                 handleClick={handleScroll}
             />
+
+            <div className='pl-60'>
+                <Image src="/plane-dotted-path.png" alt='hero image' width={300} height={271} className='object-contain'/>
+            </div>
+        </div>
+
+        <div className='w-1/2 flex justify-center items-center  bg-red-600*'>
+            <div className='hero__image'>
+                <Image src="./travel-illus.svg" alt='hero image' width={556} height={398} className='object-contain max-w-full max-h-full'/>
+
+                
+            </div>
         </div>
     </div>
   )

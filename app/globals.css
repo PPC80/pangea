@@ -3,9 +3,311 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
 .custom-btn {
   padding: 11px 13px;
 }
+
+.padding-x {
+  margin: 0;
+  padding: 0 180px; /* Adds 20px padding on the left and right */
+  box-sizing: border-box; /* Ensures padding is included in the element's total width and height */
+}
+
+.padding-y {
+  margin: 0;
+  padding: 180px 0;
+  box-sizing: border-box; /* Ensures padding is included in the element's total width and height */
+}
+
+
+
+/* Custom HTML+CSS+JS Carousel (not working, white space below it)*/
+
+.carousel-container {
+  position: absolute; /* Ensures it stays at the top of the viewport */
+  top: 0; /* Aligns the carousel to the top of the viewport */
+  left: 0; /* Ensures it starts at the left edge */
+  width: 100vw; /* Full viewport width */
+  overflow: hidden; /* Hides overflow if needed */
+}
+
+.carousel-item {
+  width: 100%; /* Make each item take up full width */
+}
+
+.carousel-item-content {
+  width: 100%; /* Make the content within each item take up full width */
+  height: 700px; /* Set desired height for carousel items */
+  display: flex;
+
+}
+
+.carousel-item-content img {
+  width: 100%; /* Make images responsive */
+  height: auto; /* Maintain aspect ratio */
+}
+
+
+
+
+
+
+/* react-multi-carousel (works but stretches images)*/
+
+.slider-container {
+  width: 100%;
+  height: 60%;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.slider {
+  display: flex;
+  height: 100%;
+  transition: transform 1s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  height: 100%;
+
+  transition: transform 1s ease-in-out, width 1s ease-in-out;
+}
+
+.dot-container {
+  z-index: 5;
+  position: absolute;
+  left: 50%;
+  bottom: 1.5em; /* Place it slightly above the bottom */
+  transform: translateX(-50%);
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 5px;
+  border-radius: 20px;
+}
+
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+  cursor: pointer;
+}
+
+.active-dot {
+  background-color: white;
+}
+
+
+
+
+
+/* Embla Carousel (not working, white space below it)*/
+
+.embla {
+  overflow: hidden;
+}
+.embla__container {
+  display: flex;
+}
+.embla__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+
+
+
+
+
+
+/* Carousel Slider Final Custom */
+
+.img-slider-img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  display: block;
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+
+.img-slider-btn {
+  all: unset;
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  padding: 1rem;
+  cursor: pointer;
+  transition: background-color 100ms ease-in-out;
+}
+
+.img-slider-btn:hover,
+.img-slider-btn:focus-visible {
+  background-color: rgb(0, 0, 0, 0.2);
+}
+
+.img-slider-btn > * {
+  stroke: white;
+  fill: black;
+  width: 2rem;
+  height: 2rem;
+}
+
+@keyframes squish {
+  50% {
+    scale: 1.4 0.6;
+  }
+}
+
+.img-slider-dot-btn {
+  all: unset;
+  display: block;
+  cursor: pointer;
+  width: 1rem;
+  height: 8rem;
+  transition: scale 100ms ease-in-out;
+}
+
+.img-slider-dot-btn:hover,
+.img-slider-dot-btn:focus-visible {
+  scale: 1.2;
+}
+
+.img-slider-dot-btn > * {
+  stroke: white;
+  fill: black;
+  height: 100%;
+  width: 100%;
+}
+
+.img-slider-dot-btn:focus-visible,
+.img-slider-btn:focus-visible {
+  outline: auto;
+}
+
+.skip-link {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+}
+
+.skip-link:focus-visible {
+  top: 0;
+  left: 0;
+  border: 1px solid black;
+  background-color: white;
+  padding: 0.5rem;
+  width: auto;
+  height: auto;
+  margin: 0;
+  clip: unset;
+  text-decoration: none;
+  color: black;
+  z-index: 100;
+}
+
+@media not (prefers-reduced-motion) {
+  .img-slider-img {
+    transition: translate 300ms ease-in-out;
+  }
+
+  .img-slider-btn:hover > *,
+  .img-slider-btn:focus-visible > * {
+    animation: squish 200ms ease-in-out;
+  }
+}
+
+@media not (prefers-reduced-motion) {
+  .img-slider-img {
+    transition: translate 300ms ease-in-out;
+  }
+
+  .img-slider-btn:hover > *,
+  .img-slider-btn:focus-visible > * {
+    animation: squish 200ms ease-in-out;
+  }
+}
+
+
+
+
+/* Shape Divider for carousel */
+
+.shapedividers_com-7909{
+  overflow:hidden;
+  position:relative;
+  }
+  .shapedividers_com-7909::before{
+  content:'';
+  font-family:'shape divider from ShapeDividers.com';
+  position: absolute;
+  bottom: -1px;
+  left: -1px;
+  right: -1px;
+  top: -1px;
+  z-index: 3;
+  pointer-events: none;
+  background-repeat: no-repeat; 
+  background-size: 100% 90px;
+  background-position: 50% 0%;    
+  background-image: url('data:image/svg+xml;charset=utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35.28 2.17" preserveAspectRatio="none"><path d="M0 .5c3.07.55 9.27-.42 16.14 0 6.88.4 13.75.57 19.14-.11V0H0z" fill="%23fbd8c2"/><path d="M0 1c3.17.8 7.29-.38 10.04-.55 2.75-.17 9.25 1.47 12.67 1.3 3.43-.17 4.65-.84 7.05-.87 2.4-.02 5.52.88 5.52.88V0H0z" opacity=".5" fill="%23fbd8c2"/><path d="M0 1.85c2.56-.83 7.68-.3 11.79-.42 4.1-.12 6.86-.61 9.58-.28 2.73.33 5.61 1.17 8.61 1 3-.19 4.73-.82 5.3-.84V.1H0z" opacity=".5" fill="%23fbd8c2"/></svg>'); 
+  }
+  
+  @media (min-width:768px){
+  .shapedividers_com-7909::before{
+  background-size: 100% 90px;
+  background-position: 50% 0%;   
+  }  
+  }
+   
+  @media (min-width:1025px){
+  .shapedividers_com-7909::before{ 
+  bottom: -0.1vw;
+  left: -0.1vw;
+  right: -0.1vw;
+  top: -0.1vw; 
+  background-size: 100% 55px;
+  background-position: 50% 100%;  
+  background-image: url('data:image/svg+xml;charset=utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35.28 2.17" preserveAspectRatio="none"><path d="M35.28 1.67c-3.07-.55-9.27.41-16.15 0-6.87-.4-13.74-.58-19.13.1v.4h35.28z" fill="%23ffffff"/><path d="M35.28 1.16c-3.17-.8-7.3.4-10.04.56-2.76.17-9.25-1.47-12.68-1.3-3.42.16-4.64.84-7.04.86C3.12 1.31 0 .4 0 .4v1.77h35.28z" opacity=".5" fill="%23ffffff"/><path d="M35.28.31c-2.57.84-7.68.3-11.8.43-4.1.12-6.85.61-9.57.28C11.18.69 8.3-.16 5.3.02 2.3.22.57.85 0 .87v1.2h35.28z" opacity=".5" fill="%23ffffff"/></svg>'); 
+  }
+  }
+  @media (min-width:2100px){
+  .shapedividers_com-7909::before{
+  background-size: 100% calc(2vw + 55px);
+  }
+}
+   
+
+
+/* Media query adjustments for mobile, react-multi-carousel*/
+
+@media (max-width: 768px) {
+  .carousel-container {
+    height: 25vh; /* Adjust height for mobile view */
+  }
+
+  .carousel-item img {
+    object-fit:cover /* Adjust image fit if necessary */
+  }
+}
+
 
 /* :root {
   --foreground-rgb: 0, 0, 0;
