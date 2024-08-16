@@ -4,21 +4,53 @@ import Image from 'next/image'
 import CustomButton from './CustomButton'
 
 const Navbar = () => {
-  return (
-    <header className='w-full absolute z-10'>
-        <nav className='max-w-[1440px] mx-auto flex justify-between items-center sm:px-16 px-6 py-4'>
-            <Link href="/" className='flex justify-center items-center'>
-                <Image
-                    src="/logo-white.png"
-                    alt="Pangea Travel Logo"
-                    width={334}
-                    height={105}
-                    className='object-contain'
-                />
-            </Link>
-        </nav>
-    </header>
-  )
+    return (
+        <header className="absolute z-10 w-full">
+            <nav className="mx-auto flex max-w-[1380px] items-center justify-between py-6 sm:px-16">
+                <Link href="/" className="flex items-center justify-center">
+                    <Image
+                        src="/logo-white-cr.png"
+                        alt="Pangea Travel Logo"
+                        width={334}
+                        height={210}
+                        className="object-contain"
+                    />
+                </Link>
+                <div className="flex flex-row space-x-6">
+                    <Link
+                        href="/"
+                        className="text-white hover:text-primary-green"
+                    >
+                        Inicio
+                    </Link>
+                    <Link
+                        href="/"
+                        className="text-white hover:text-primary-green"
+                    >
+                        Tours Internacionales
+                    </Link>
+                    <Link
+                        href="/"
+                        className="text-white hover:text-primary-green"
+                    >
+                        Tours de Fútbol
+                    </Link>
+                    <Link
+                        href="/"
+                        className="text-white hover:text-primary-green"
+                    >
+                        Conócenos
+                    </Link>
+                    <Link
+                        href="/"
+                        className="text-white hover:text-primary-green"
+                    >
+                        Contáctanos
+                    </Link>
+                </div>
+            </nav>
+        </header>
+    )
 }
 
 export default Navbar

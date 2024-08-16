@@ -10,8 +10,8 @@ const Hero = () => {
     }
 
   return (
-    <div className='flex flex-row px-72 py-36'>
-        <div className='flex-1 w-1/2 bg-orange-400* space-y-4'>
+    <div className='flex flex-row justify-center items-center px-12 py-36 space-x-12'>
+        <div className='flex-1 flex flex-col justify-center w-1/2 bg-orange-400* max-w-[600px] space-y-4'>
             <h1 className='font-extrabold text-4xl'>
                 Viaja, Conoce, Disfruta
             </h1>
@@ -23,7 +23,7 @@ const Hero = () => {
 
             <CustomButton 
                 title="Explora nuestros tours"
-                containerStyles="bg-primary-green text-black text-xs font-semibold rounded"
+                containerStyles="bg-primary-green text-black text-xs font-semibold rounded max-w-[180px]"
                 handleClick={handleScroll}
             />
 
@@ -32,7 +32,7 @@ const Hero = () => {
             </div>
         </div>
 
-        <div className='w-1/2 flex justify-center items-center  bg-red-600*'>
+        <div className='w-1/2 flex justify-center items-center max-w-[600px] bg-red-600*'>
             <div className='hero__image'>
                 <Image src="./travel-illus.svg" alt='hero image' width={556} height={398} className='object-contain max-w-full max-h-full'/>
 

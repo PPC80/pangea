@@ -10,6 +10,10 @@
   font-family: "Poppins", sans-serif;
 }
 
+body {
+  @apply flex items-center justify-center min-h-screen;
+}
+
 .custom-btn {
   padding: 11px 13px;
 }

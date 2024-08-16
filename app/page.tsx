@@ -1,5 +1,5 @@
 import React from 'react';
-import { Hero } from "@/components";
+import { Hero, Navbar } from "@/components";
 import Image from "next/image";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
@@ -16,6 +16,7 @@ export default function Home() {
 
   return (
     <main>
+      <Navbar/>
       <div
       style={{
         width: "100%",
