@@ -10,7 +10,7 @@ const Hero = () => {
     }
 
   return (
-    <div className='flex flex-row justify-center items-center px-12 py-36 space-x-12'>
+    <div className='flex flex-row justify-center items-center px-12 mt-24 space-x-12'>
         <div className='flex-1 flex flex-col justify-center w-1/2 bg-orange-400* max-w-[600px] space-y-4'>
             <h1 className='font-extrabold text-4xl'>
                 Viaja, Conoce, Disfruta

@@ -1,4 +1,6 @@
 import Hero from "./Hero";
+import TourCardSection from "./TourCardSection";
+import TestimonialSection from "./TestimonialSection";
 import CustomButton from "./CustomButton";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
@@ -13,6 +15,8 @@ export {
     Navbar,
     Footer,
     Slider,
-    ImageSlider
+    ImageSlider,
+    TourCardSection,
+    TestimonialSection
     //EmblaCarousel
 }
