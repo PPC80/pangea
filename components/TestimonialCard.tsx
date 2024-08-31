@@ -1,5 +1,5 @@
 import React from 'react'
-import Image from 'next/image'
+import Image from "next/image"
 import { TestimonialCardProps } from '@/types';
 
 const TestimonialCard = ({testimonial, touristName, travelDestination, tripDate, imageUrl, imageAlt, ratingImageUrl}: TestimonialCardProps) => {
@@ -9,9 +9,11 @@ const TestimonialCard = ({testimonial, touristName, travelDestination, tripDate,
         <Image
           src={imageUrl}
           alt={imageAlt}
-          layout="fill"
-          objectFit="cover"
-        />
+          fill
+          sizes="100vw"
+          style={{
+            objectFit: "cover"
+          }} />
       </div>
 
       <div className="*bg-green-600 flex-grow flex items-center justify-center pt-4" style={{ flex: '0 0 15%' }}>
@@ -21,7 +23,10 @@ const TestimonialCard = ({testimonial, touristName, travelDestination, tripDate,
           width={130}
           height={13}
           className="object-contain"
-        />
+          style={{
+            maxWidth: "100%",
+            height: "auto"
+          }} />
       </div>
 
       <div className="*bg-yellow-400 flex-grow flex flex-col items-center justify-center pointer-events-none" style={{ flex: '0 0 35%' }}>
@@ -30,7 +35,7 @@ const TestimonialCard = ({testimonial, touristName, travelDestination, tripDate,
         <p className="text-sm text-black text-center font-extralight"> Viaje a {travelDestination} - {tripDate} </p>
       </div>
     </div>
-  )
+  );
 }
 
 export default TestimonialCard

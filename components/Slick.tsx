@@ -15,13 +15,40 @@ export default function SimpleSlider() {
   return (
     <Slider {...settings}>
       <div>
-        <Image src="/1.png" alt="Description 1" layout="responsive" width={800} height={600} />
+        <Image
+          src="/1.png"
+          alt="Description 1"
+          width={800}
+          height={600}
+          sizes="100vw"
+          style={{
+            width: "100%",
+            height: "auto"
+          }} />
       </div>
       <div>
-         <Image src="/1.png" alt="Description 1" layout="responsive" width={800} height={600} />
+         <Image
+           src="/1.png"
+           alt="Description 1"
+           width={800}
+           height={600}
+           sizes="100vw"
+           style={{
+             width: "100%",
+             height: "auto"
+           }} />
       </div>
       <div>
-         <Image src="/1.png" alt="Description 1" layout="responsive" width={800} height={600} />
+         <Image
+           src="/1.png"
+           alt="Description 1"
+           width={800}
+           height={600}
+           sizes="100vw"
+           style={{
+             width: "100%",
+             height: "auto"
+           }} />
       </div>
     </Slider>
   );

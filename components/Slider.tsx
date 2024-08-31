@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useState, useEffect } from 'react';
-import Image from 'next/image';
+import Image from "next/image";
 
 const Slider: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -47,7 +47,16 @@ const Slider: React.FC = () => {
       <div className="slider" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
         {slides.map((slide, index) => (
           <div className="slide" key={index}>
-            <Image src={slide.src} alt={slide.alt} width={800} height={600} layout="responsive" />
+            <Image
+              src={slide.src}
+              alt={slide.alt}
+              width={800}
+              height={600}
+              sizes="100vw"
+              style={{
+                width: "100%",
+                height: "auto"
+              }} />
           </div>
         ))}
       </div>

@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
+import Image from "next/image"
 import CustomButton from './CustomButton'
 
 const Navbar = () => {
@@ -14,7 +14,10 @@ const Navbar = () => {
                         width={334}
                         height={210}
                         className="object-contain"
-                    />
+                        style={{
+                            maxWidth: "100%",
+                            height: "auto"
+                        }} />
                 </Link>
                 <div className="flex flex-row space-x-6">
                     <Link
@@ -50,7 +53,7 @@ const Navbar = () => {
                 </div>
             </nav>
         </header>
-    )
+    );
 }
 
 export default Navbar
