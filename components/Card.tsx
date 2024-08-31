@@ -2,10 +2,9 @@ import React from 'react'
 import Image from 'next/image'
 import { CardProps } from '@/types';
 
-
 const Card = ({title, tourDurationNights, tourDurationDays, imageUrl, imageAlt}: CardProps) => {
   return (
-    
+
     <div className="relative w-full h-0 pb-[35%] max-w-[450px] overflow-hidden rounded-lg shadow-lg group">
         <Image
         src={imageUrl}

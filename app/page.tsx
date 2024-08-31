@@ -18,7 +18,7 @@ export default function Home() {
   return (
     <main>
       <Navbar/>
-      <div
+      {/* <div
         style={{
           width: "100%",
           aspectRatio: "2.5 / 1",
@@ -26,11 +26,11 @@ export default function Home() {
         }}
         className='shapedividers_com-7909'
     >
+      </div> */}
       <ImageSlider />
-      </div>
       <Hero/>
       <TourCardSection/>
-      <TestimonialSection/>
+      
     </main>
   );
 }

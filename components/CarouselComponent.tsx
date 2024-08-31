@@ -4,23 +4,23 @@ import React from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import Image from 'next/image';
+import TestimonialCard from './TestimonialCard';
 
 const responsive = {
-  superLargeDesktop: {
-    breakpoint: { max: 4000, min: 3000 },
-    items: 1
-  },
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
-    items: 1
+    items: 3,
+    slidesToSlide: 1 // optional, default to 1.
   },
   tablet: {
     breakpoint: { max: 1024, min: 464 },
-    items: 1
+    items: 2,
+    slidesToSlide: 2 // optional, default to 1.
   },
   mobile: {
     breakpoint: { max: 464, min: 0 },
-    items: 1 // Ensure only one item is shown per slide
+    items: 1,
+    slidesToSlide: 1 // optional, default to 1.
   }
 };
 
@@ -45,14 +45,45 @@ const CarouselComponent: React.FC = () => {
     >
 
       <div className="carousel-item-content">
-        <Image src="/1.png" alt="Description 1" layout="responsive" width={800} height={600} />
-      </div>
+      <TestimonialCard
+            testimonial='Me encantó el viaje! Recomendado! Me encantó el viaje! Recomendado!'
+            touristName='Mark'
+            travelDestination="Brasil"
+            tripDate='02/2024'
+            imageUrl='/client1.jpg'
+            imageAlt='Testimonio1'
+            ratingImageUrl='/ratings5.png'
+        />      </div>
       <div className="carousel-item-content">
-        <Image src="/2.png" alt="Description 2" layout="responsive" width={800} height={600} />
-      </div>
+      <TestimonialCard
+            testimonial='Me encantó el viaje! Recomendado! Me encantó el viaje! Recomendado!'
+            touristName='Mark'
+            travelDestination="Brasil"
+            tripDate='02/2024'
+            imageUrl='/client2.jpg'
+            imageAlt='Testimonio1'
+            ratingImageUrl='/ratings5.png'
+        />      </div>
       <div className="carousel-item-content">
-        <Image src="/3.png" alt="Description 3" layout="responsive" width={800} height={600} />
-      </div>
+      <TestimonialCard
+            testimonial='Me encantó el viaje! Recomendado! Me encantó el viaje! Recomendado!'
+            touristName='Mark'
+            travelDestination="Brasil"
+            tripDate='02/2024'
+            imageUrl='/client3.jpg'
+            imageAlt='Testimonio1'
+            ratingImageUrl='/ratings5.png'
+        />      </div>
+      <div className="carousel-item-content">
+      <TestimonialCard
+            testimonial='Me encantó el viaje! Recomendado! Me encantó el viaje! Recomendado!'
+            touristName='Mark'
+            travelDestination="Brasil"
+            tripDate='02/2024'
+            imageUrl='/client4.jpg'
+            imageAlt='Testimonio1'
+            ratingImageUrl='/ratings5.png'
+        />      </div>
 
     </Carousel>
   );

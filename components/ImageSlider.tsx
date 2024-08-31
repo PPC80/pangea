@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { ArrowBigLeft, ArrowBigRight, Circle, CircleDot } from "lucide-react";
+import Link from "next/link";
 
 type ImageType = {
   src: string;
@@ -9,9 +10,9 @@ type ImageType = {
 };
 
 const images: ImageType[] = [
-  { src: "/Hero 1.png", alt: "Car One" },
-  { src: "/Hero 2.png", alt: "Car Two" },
-  { src: "/Hero 3.png", alt: "Car Three" }
+  { src: "/Hero 1.png", alt: "Tour Image Slide 1" },
+  { src: "/Hero 2.png", alt: "Tour Image Slide 2" },
+  { src: "/Hero 3.png", alt: "Tour Image Slide 3" }
 ];
 
 export default function ImageSlider() {
@@ -27,9 +28,10 @@ export default function ImageSlider() {
 
   return (
     <section aria-label="Image Slider" style={{ width: "100%", height: "100%", position: "relative" }}>
-      <a href="#after-image-slider-controls" className="skip-link">
+      <Link href="#after-image-slider-controls" className="skip-link">
         Skip Image Slider Controls
-      </a>
+      </Link>
+
       <div style={{ width: "100%", height: "100%", display: "flex", overflow: "hidden" }}>
         {images.map(({ src, alt }, index) => (
           <img
@@ -42,12 +44,15 @@ export default function ImageSlider() {
           />
         ))}
       </div>
+
       <button onClick={showPrevImage} className="img-slider-btn" style={{ left: 0 }} aria-label="View Previous Image">
         <ArrowBigLeft aria-hidden />
       </button>
+      
       <button onClick={showNextImage} className="img-slider-btn" style={{ right: 0 }} aria-label="View Next Image">
         <ArrowBigRight aria-hidden />
       </button>
+
       <div style={{ position: "absolute", bottom: ".5rem", left: "50%", translate: "-50%", display: "flex", gap: ".25rem" }}>
         {images.map((_, index) => (
           <button
@@ -60,8 +65,8 @@ export default function ImageSlider() {
           </button>
         ))}
       </div>
+
       <div id="after-image-slider-controls" />
-      
       
     </section>
   );
