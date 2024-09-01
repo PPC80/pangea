@@ -10,7 +10,7 @@ const Hero = () => {
     }
 
   return (
-      <div className='flex flex-col sm:flex-row w-full justify-center items-center px-4 sm:px-12 mt-24 sm:space-x-12'>
+      <section className='flex flex-col sm:flex-row w-full justify-center items-center px-4 sm:px-12 mt-24 sm:space-x-12'>
           <div className='flex-1 flex flex-col items-center md:items-start justify-center sm:w-1/2 bg-orange-400* max-w-[600px] space-y-4'>
               <h1 className='font-extrabold text-3xl sm:text-4xl text-center sm:text-left'>
                   Viaja, Conoce, Disfruta
@@ -55,7 +55,7 @@ const Hero = () => {
                       }} />
               </div>
           </div>
-      </div>
+      </section>
   );
 }
 

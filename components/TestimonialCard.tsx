@@ -1,36 +1,35 @@
-import React from 'react'
-import Image from "next/image"
+import React from 'react';
+import Image from "next/image";
 import { TestimonialCardProps } from '@/types';
 
-const TestimonialCard = ({testimonial, touristName, travelDestination, tripDate, imageUrl, imageAlt, ratingImageUrl}: TestimonialCardProps) => {
+const TestimonialCard = ({ testimonial, touristName, travelDestination, tripDate, imageUrl, imageAlt, ratingImageUrl }: TestimonialCardProps) => {
   return (
-    <div className="*bg-red-500 flex flex-col w-full h-[350px] max-w-[350px] overflow-hidden rounded-3xl shadow-lg">
-      <div className='bg-blue-300 relative flex-grow ' style={{ flex: '0 0 50%' }}>
+    <div className="flex flex-col w-full max-w-[400px] sm:max-w-md md:max-w-[370px] lg:max-w-md mx-auto overflow-hidden rounded-3xl shadow-lg">
+      {/* Image Section */}
+      <div className='relative w-full h-48'>
         <Image
           src={imageUrl}
           alt={imageAlt}
           fill
-          sizes="100vw"
-          style={{
-            objectFit: "cover"
-          }} />
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          className="object-cover"
+        />
       </div>
 
-      <div className="*bg-green-600 flex-grow flex items-center justify-center pt-4" style={{ flex: '0 0 15%' }}>
+      {/* Rating Section */}
+      <div className="bg-white flex items-center justify-center pt-4">
         <Image
           src={ratingImageUrl}
           alt="Rating"
           width={130}
           height={13}
           className="object-contain"
-          style={{
-            maxWidth: "100%",
-            height: "auto"
-          }} />
+        />
       </div>
 
-      <div className="*bg-yellow-400 flex-grow flex flex-col items-center justify-center pointer-events-none" style={{ flex: '0 0 35%' }}>
-        <p className="text-l text-black mb-1 text-center font-light"> &quot;{testimonial}&quot; </p>
+      {/* Testimonial Section */}
+      <div className="bg-white flex flex-col items-center justify-center p-4">
+        <p className="text-lg text-black mb-1 text-center font-light"> &quot;{testimonial}&quot; </p>
         <p className="text-sm text-black text-center font-extralight"> -{touristName} </p>
         <p className="text-sm text-black text-center font-extralight"> Viaje a {travelDestination} - {tripDate} </p>
       </div>
@@ -38,6 +37,7 @@ const TestimonialCard = ({testimonial, touristName, travelDestination, tripDate,
   );
 }
 
-export default TestimonialCard
+export default TestimonialCard;
+
 
 

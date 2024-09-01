@@ -1,64 +1,22 @@
 import React from 'react'
-import TestimonialCard from './TestimonialCard'
-import { EmblaOptionsType } from 'embla-carousel'
-import EmblaCarousel from './EmblaCarousel'
-import Slider from './Slider'
-import CarouselComponent from './CarouselComponent'
+import Responsive from './TestimonialCarousel'
 
 const TestimonialSection = () => {
-    const OPTIONS: EmblaOptionsType = { loop: true }
-    
-    // Array of testimonial data
-    const testimonials = [
-        {
-            testimonial: 'Me encantó el viaje! Recomendado! Me encantó el viaje! Recomendado!',
-            touristName: 'Mark',
-            travelDestination: 'Brasil',
-            tripDate: '02/2024',
-            imageUrl: '/client1.jpg',
-            imageAlt: 'Testimonio1',
-            ratingImageUrl: '/ratings5.png'
-        },
-        {
-            testimonial: 'Me encantó el viaje! Recomendado! Me encantó el viaje! Recomendado!',
-            touristName: 'Mark',
-            travelDestination: 'Brasil',
-            tripDate: '02/2024',
-            imageUrl: '/client2.jpg',
-            imageAlt: 'Testimonio2',
-            ratingImageUrl: '/ratings5.png'
-        },
-        {
-            testimonial: 'Me encantó el viaje! Recomendado! Me encantó el viaje! Recomendado!',
-            touristName: 'Mark',
-            travelDestination: 'Brasil',
-            tripDate: '02/2024',
-            imageUrl: '/client3.jpg',
-            imageAlt: 'Testimonio3',
-            ratingImageUrl: '/ratings5.png'
-        }
-    ]
-
-    // Generate slides using map
-    const SLIDES = testimonials.map((testimonial, index) => (
-        <TestimonialCard
-            key={`testimonial-${index}`} // Unique key for each TestimonialCard
-            testimonial={testimonial.testimonial}
-            touristName={testimonial.touristName}
-            travelDestination={testimonial.travelDestination}
-            tripDate={testimonial.tripDate}
-            imageUrl={testimonial.imageUrl}
-            imageAlt={testimonial.imageAlt}
-            ratingImageUrl={testimonial.ratingImageUrl}
-        />
-    ))
-
     return (
-        <div className='flex items-center px-12 mt-24'>
-            {/* <EmblaCarousel slides={SLIDES} options={OPTIONS}/> */}
-            <CarouselComponent />
+        <div className="relative">
+            <div className='absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-white via-transparent to-transparent z-10'></div>
+            <div className='absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-white via-transparent to-transparent z-10'></div>
+          
+            <div className="bg-gradient-to-br from-primary-blue to-primary-green w-full items-center px-8 sm:px-8 md:px-8 lg:px-12 mt-12 md:mt-24 py-28 pb-40 relative">
+            
+            <Responsive/>
+
+            <div className='absolute bottom-0 left-0 right-0 pt-4'>
+                <div className='shapedividers_com-6073'></div>
+            </div>
+          </div>
         </div>
-    )
+      )
 }
 
 export default TestimonialSection
