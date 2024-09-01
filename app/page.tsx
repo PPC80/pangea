@@ -1,6 +1,8 @@
 import React from 'react';
 import { Hero, Navbar, TestimonialSection, TourCardSection } from "@/components";
 import ImageSlider from "@/components/ImageSlider";
+import WhyUsSection from '@/components/WhyUsSection';
+import VideoSection from '@/components/VideoSection';
 
 export default function Home() {
   return (
@@ -9,7 +11,9 @@ export default function Home() {
       <ImageSlider />
       <Hero/>
       <TourCardSection/>
-      <TestimonialSection/>        
+      <TestimonialSection/>
+      <WhyUsSection/>
+      <VideoSection/>  
     </main>
   );
 }

@@ -27,7 +27,6 @@ const TourCardSection = () => {
             ))}
         </div>
     </section>
-
   )
 }
 

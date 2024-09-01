@@ -24,3 +24,16 @@ export interface TestimonialCardProps {
     imageAlt: string;
     ratingImageUrl: string;
 }
+
+export interface FeaturePointProps {
+    icon: React.ReactNode;
+    title: string;
+    text: string;
+}
+
+export interface SectionTitleProps {
+    title: React.ReactNode;
+    subtitle: string;
+    titleStyles?: string;
+    subtitleStyles?: string;
+}
