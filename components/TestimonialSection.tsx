@@ -1,6 +1,6 @@
 import React from 'react'
-import Responsive from './TestimonialCarousel'
-import SectionTitle from './SectionTitle'
+import Responsive from './ui/TestimonialCarousel'
+import SectionTitle from './ui/SectionTitle'
 
 const TestimonialSection = () => {
     return (

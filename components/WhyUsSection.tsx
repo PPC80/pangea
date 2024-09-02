@@ -1,7 +1,7 @@
 import { FeaturePointProps } from '@/types'
 import React from 'react'
 import { Compass, Plane, Globe, BookCheck } from 'lucide-react';
-import SectionTitle from './SectionTitle';
+import SectionTitle from './ui/SectionTitle';
 
 const FeaturePoint = ({icon, title, text}: FeaturePointProps) => {
   return (
@@ -25,7 +25,7 @@ const WhyUsSection = () => {
   ];
 
   return (
-    <section className='h-auto flex flex-col items-center px-4 sm:px-6 md:px-8 lg:px-12 mt-12 md:mt-24'>
+    <section className='h-auto flex flex-col items-center px-4 sm:px-6 md:px-8 lg:px-12 mt-12 md:mt-18'>
         <SectionTitle
           title='¿Por qué viajar con nosotros?'
           subtitle='Descrube por qué somos tu mejor opción'

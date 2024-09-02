@@ -1,5 +1,5 @@
 import React from 'react'
-import CustomButton from './CustomButton'
+import CustomButton from './ui/CustomButton'
 
 const VideoSection = () => {
   return (
@@ -14,7 +14,7 @@ const VideoSection = () => {
                 className='absolute inset-0 w-full h-full object-cover'
             />
             <div className='relative z-10 text-white flex flex-col items-center justify-center h-full gap-6'>
-                <h2 className='font-extrabold text-3xl text-center'>Descrube el mundo con nosotros</h2>
+                <h2 className='font-extrabold text-3xl text-center'>Descubre el mundo con nosotros</h2>
                 
                 <CustomButton
                     title='Explora todos los destinos'

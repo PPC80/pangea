@@ -1,8 +1,11 @@
 import React from 'react';
-import { Hero, Navbar, TestimonialSection, TourCardSection } from "@/components";
-import ImageSlider from "@/components/ImageSlider";
+import ImageSlider from "@/components/ui/ImageSlider";
 import WhyUsSection from '@/components/WhyUsSection';
 import VideoSection from '@/components/VideoSection';
+import Hero from '@/components/Hero'
+import Navbar from '@/components/Navbar'
+import TestimonialSection from '@/components/TestimonialSection'
+import TourCardSection from '@/components/TourCardSection'
 
 export default function Home() {
   return (
