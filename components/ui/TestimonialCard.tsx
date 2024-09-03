@@ -4,7 +4,7 @@ import { TestimonialCardProps } from '@/types';
 
 const TestimonialCard = ({ testimonial, touristName, travelDestination, tripDate, imageUrl, imageAlt, ratingImageUrl }: TestimonialCardProps) => {
   return (
-    <div className="flex flex-col w-full max-w-[400px] sm:max-w-md md:max-w-[370px] lg:max-w-md mx-auto overflow-hidden rounded-3xl shadow-lg">
+    <div className="flex flex-col w-full max-w-[400px] sm:max-w-md md:max-w-md lg:max-w-md mx-auto mb-6 overflow-hidden rounded-3xl shadow-lg">
       {/* Image Section */}
       <div className='relative w-full h-48'>
         <Image

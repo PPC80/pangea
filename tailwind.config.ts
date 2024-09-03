@@ -16,6 +16,10 @@ const config: Config = {
   		fontFamily: {
   			poppins: ["Poppins", "sans-serif"]
   		},
+		screens: {
+			'2xl': '1750px',
+			'3xl': '1920px',
+		},
   		colors: {
   			'primary-blue': '#253259',
   			'primary-green': '#06BF9D',

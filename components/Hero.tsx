@@ -10,13 +10,13 @@ const Hero = () => {
     }
 
   return (
-      <section className='flex flex-col sm:flex-row w-full justify-center items-center px-5 sm:px-12 mt-24 sm:space-x-12'>
+      <section className='flex flex-col sm:flex-row w-full justify-center items-center px-5 sm:px-12 mt-14 lg:mt-24 sm:space-x-12'>
           <div className='flex-1 flex flex-col items-center md:items-start justify-center sm:w-1/2 bg-orange-400* max-w-[600px] space-y-4'>
               <h1 className='font-extrabold text-3xl sm:text-4xl text-center sm:text-left'>
                   Viaja, Conoce, Disfruta
               </h1>
 
-              <p className='text-base text-center sm:text-left'>
+              <p className='text-xl lg:text-base text-center sm:text-left'>
                   Somos tu agencia de viajes de confianza, conoce el mundo con nosotros. <br/>
                   Explora destinos extraordinarios y crea recuerdos inolvidables!
               </p>

@@ -14,7 +14,7 @@ const TourCardSection = () => {
       ]
 
   return (
-    <section className='h-auto flex flex-col items-center px-5 sm:px-6 md:px-8 lg:px-12 mt-12 md:mt-24'>
+    <section className='h-auto flex flex-col items-center px-5 sm:px-6 md:px-8 lg:px-12 mt-20 md:mt-24'>
         <SectionTitle
           title='Destinos Internacionales'
           subtitle='Viajes que no te puedes perder'

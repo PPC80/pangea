@@ -5,7 +5,7 @@ import SectionTitle from './ui/SectionTitle';
 
 const FeaturePoint = ({icon, title, text}: FeaturePointProps) => {
   return (
-    <div className="flex flex-col items-center text-center max-w-[345px]">
+    <div className="flex flex-col items-center text-center max-w-[340px]">
       <div className="mb-4">
         {icon}
       </div>

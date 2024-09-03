@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import CustomButton from './ui/CustomButton';
 import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
 import {
@@ -28,7 +27,7 @@ const components: { title: string; href: string }[] = [
 
 const Navbar = () => {
 
-    const isDesktop = useMediaQuery("(min-width: 768px)")
+    const isDesktop = useMediaQuery("(min-width: 900px)")
 
     const [isScrolled, setIsScrolled] = useState(false);   
 
@@ -43,7 +42,7 @@ const Navbar = () => {
     }, []);
 
     return isDesktop? (
-        <header className={`fixed top-0 left-0 z-10 w-full transition-all duration-300 ease-in-out ${isScrolled ? 'bg-white shadow-lg' : 'bg-transparent'} py-4`}>
+        <header className={`fixed top-0 left-0 z-20 w-full transition-all duration-300 ease-in-out ${isScrolled ? 'bg-white shadow-lg' : 'bg-transparent'} py-4`}>
             <div className="flex justify-between items-center px-60">
                 <Link href="/">
                     <Image
@@ -104,7 +103,7 @@ const Navbar = () => {
         </header>
     ) 
     : (
-        <header className={`fixed flex flex-row justify-between items-center px-10 top-0 left-0 z-10 w-full transition-all duration-300 ease-in-out ${isScrolled ? 'bg-white shadow-lg' : 'bg-transparent'} py-4`}>
+        <header className={`fixed flex flex-row justify-between items-center px-10 top-0 left-0 z-20 w-full transition-all duration-300 ease-in-out ${isScrolled ? 'bg-white shadow-lg' : 'bg-transparent'} py-4`}>
             <Link href="/">
                 <Image
                     src={isScrolled ? "/logo-color-cr.png" : "/logo-white-cr.png"}
