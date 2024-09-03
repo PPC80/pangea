@@ -41,16 +41,16 @@ NavigationMenuList.displayName = NavigationMenuPrimitive.List.displayName
 const NavigationMenuItem = NavigationMenuPrimitive.Item
 
 const navigationMenuTriggerStyle = cva(
-  "group text-white inline-flex h-9 w-max items-center justify-center px-4 py-2 text-sm font-medium transition-colors underline-on-hover hover:text-primary-green hover:text-accent-foreground disabled:pointer-events-none"
+  "group text-white inline-flex h-9 w-max items-center justify-center px-4 py-2 text-md font-medium transition-colors underline-on-hover hover:text-primary-green hover:text-accent-foreground disabled:pointer-events-none"
 )
 
 const NavigationMenuTrigger = React.forwardRef<
   React.ElementRef<typeof NavigationMenuPrimitive.Trigger>,
-  React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Trigger>
->(({ className, children, ...props }, ref) => (
+  React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Trigger> & { isScrolled: boolean }
+>(({ className, children, isScrolled, ...props }, ref) => (
   <NavigationMenuPrimitive.Trigger
     ref={ref}
-    className={cn(navigationMenuTriggerStyle(), "group text-white hover:text-primary-green", className)}
+    className={cn(navigationMenuTriggerStyle(), "group text-white hover:text-primary-green", isScrolled ? 'text-black hover:text-primary-green' : 'text-white hover:text-primary-green', className)}
     {...props}
   >
     {children}{" "}

@@ -15,6 +15,10 @@ import {
     NavigationMenuTrigger,
     NavigationMenuViewport,
 } from "@/components/ui/navigation-menu";
+import { useMediaQuery } from '@/hooks/use-media-query';
+import { Drawer, DrawerClose, DrawerContent, DrawerHeader, DrawerTrigger } from './ui/drawer';
+import { MenuIcon, XIcon, ChevronRightIcon } from 'lucide-react';
+import { Collapsible, CollapsibleTrigger, CollapsibleContent } from "@/components/ui/collapsible"
 
 const components: { title: string; href: string }[] = [
     { title: "América", href: "/" },
@@ -23,7 +27,10 @@ const components: { title: string; href: string }[] = [
 ];
 
 const Navbar = () => {
-    const [isScrolled, setIsScrolled] = useState(false);
+
+    const isDesktop = useMediaQuery("(min-width: 768px)")
+
+    const [isScrolled, setIsScrolled] = useState(false);   
 
     // Handle scroll event
     useEffect(() => {
@@ -35,24 +42,24 @@ const Navbar = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    return (
+    return isDesktop? (
         <header className={`fixed top-0 left-0 z-10 w-full transition-all duration-300 ease-in-out ${isScrolled ? 'bg-white shadow-lg' : 'bg-transparent'} py-4`}>
             <div className="flex justify-between items-center px-60">
                 <Link href="/">
                     <Image
-                        src={isScrolled ? "/logo-color-cr.png" : "/logo-white-cr.png"} // Dynamically change logo
+                        src={isScrolled ? "/logo-color-cr.png" : "/logo-white-cr.png"}
                         alt="Pangea Travel Logo"
                         width={334}
                         height={210}
-                        className={`object-contain transition-all duration-300 ${isScrolled ? 'h-10' : 'h-20'}`} // Shrinks the logo on scroll
+                        className={`object-contain transition-all duration-300 ${isScrolled ? 'h-10' : 'h-20'}`}
                     />
                 </Link>
                 <NavigationMenu>
                     <NavigationMenuList>
                         <NavigationMenuItem>
-                            <NavigationMenuLink asChild>
-                                <Link href="/" className={isScrolled ? 'text-black' : 'text-white'}> {/* Change text color on scroll */}
-                                    <NavigationMenuTrigger>Tours Internacionales</NavigationMenuTrigger>
+                            <NavigationMenuLink asChild className={cn(navigationMenuTriggerStyle(), isScrolled ? 'text-black hover:text-primary-green' : 'text-white hover:text-primary-green')}>
+                                <Link href="/">
+                                    <NavigationMenuTrigger isScrolled={isScrolled}>Tours Internacionales</NavigationMenuTrigger>
                                 </Link>
                             </NavigationMenuLink>
                             <NavigationMenuContent>
@@ -71,22 +78,22 @@ const Navbar = () => {
 
                         {/* Additional Menu Items */}
                         <NavigationMenuItem>
-                            <NavigationMenuLink asChild className={cn(navigationMenuTriggerStyle(), isScrolled ? 'text-black' : 'text-white')}>
+                            <NavigationMenuLink asChild className={cn(navigationMenuTriggerStyle(), isScrolled ? 'text-black hover:text-primary-green' : 'text-white hover:text-primary-green')}>
                                 <Link href="/">
                                     Tours de Fútbol
                                 </Link>
                             </NavigationMenuLink>
                         </NavigationMenuItem>
                         <NavigationMenuItem>
-                            <NavigationMenuLink asChild className={cn(navigationMenuTriggerStyle(), isScrolled ? 'text-black' : 'text-white')}>
-                                <Link href="/" className={isScrolled ? 'text-black' : 'text-white'}>
+                            <NavigationMenuLink asChild className={cn(navigationMenuTriggerStyle(), isScrolled ? 'text-black hover:text-primary-green' : 'text-white hover:text-primary-green')}>
+                                <Link href="/">
                                     Conócenos
                                 </Link>
                             </NavigationMenuLink>
                         </NavigationMenuItem>
                         <NavigationMenuItem>
-                            <NavigationMenuLink asChild className={cn(navigationMenuTriggerStyle(), isScrolled ? 'text-black' : 'text-white')}>
-                                <Link href="/" className={isScrolled ? 'text-black' : 'text-white'}>
+                            <NavigationMenuLink asChild className={cn(navigationMenuTriggerStyle(), isScrolled ? 'text-black hover:text-primary-green' : 'text-white hover:text-primary-green')}>
+                                <Link href="/">
                                     Contáctanos
                                 </Link>
                             </NavigationMenuLink>
@@ -95,7 +102,70 @@ const Navbar = () => {
                 </NavigationMenu>
             </div>
         </header>
-    );
+    ) 
+    : (
+        <header className={`fixed flex flex-row justify-between items-center px-10 top-0 left-0 z-10 w-full transition-all duration-300 ease-in-out ${isScrolled ? 'bg-white shadow-lg' : 'bg-transparent'} py-4`}>
+            <Link href="/">
+                <Image
+                    src={isScrolled ? "/logo-color-cr.png" : "/logo-white-cr.png"}
+                    alt="Pangea Travel Logo"
+                    width={200}
+                    height={100}
+                />
+            </Link>
+            <Drawer direction='top'>
+                <DrawerTrigger asChild>
+                    <MenuIcon color={isScrolled ? "#000000" : "#FFFFFF"} className='w-10 h-10'/>
+                </DrawerTrigger>
+                <DrawerContent>
+                    <div className='bg-primary-blue flex flex-row justify-between items-center px-10 py-4'>
+                        <Link href="/">
+                            <Image
+                                src="/logo-white-cr.png"
+                                alt="Pangea Travel Logo"
+                                width={200}
+                                height={100}
+                            />
+                        </Link>
+                        <DrawerClose>
+                            <XIcon color='#FFFFFF' className='w-10 h-10'/>
+                        </DrawerClose>
+                    </div>
+
+                    <nav className="grid gap-4 px-10 py-10">
+                        <Collapsible className="grid gap-4">
+                            <CollapsibleTrigger className="flex items-center gap-2 text-lg font-medium">
+                                Tours Internacionales
+                                <ChevronRightIcon className="h-5 w-5 ml-auto transition-transform [&[data-state=open]]:rotate-90" />
+                            </CollapsibleTrigger>
+                            <CollapsibleContent>
+                                <div className='grid gap-4 bg-muted px-6 py-4'>
+                                    <Link href="#" className="flex items-center gap-2 text-sm font-medium" prefetch={false}>
+                                        América
+                                    </Link>
+                                    <Link href="#" className="flex items-center gap-2 text-sm font-medium" prefetch={false}>
+                                        Europa
+                                    </Link>
+                                    <Link href="#" className="flex items-center gap-2 text-sm font-medium" prefetch={false}>
+                                        Asia
+                                    </Link>
+                                </div>
+                            </CollapsibleContent>
+                        </Collapsible>
+                        <Link href="#" className="flex items-center gap-2 text-lg font-medium" prefetch={false}>
+                            Tours de Fútbol
+                        </Link>
+                        <Link href="#" className="flex items-center gap-2 text-lg font-medium" prefetch={false}>
+                            Conócenos
+                        </Link>
+                        <Link href="#" className="flex items-center gap-2 text-lg font-medium" prefetch={false}>
+                            Contáctanos
+                        </Link>
+                    </nav>
+                </DrawerContent>
+            </Drawer>
+        </header>
+    )
 };
 
 const ListItem = React.forwardRef<
@@ -110,7 +180,7 @@ const ListItem = React.forwardRef<
           className={cn(
             `block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors
             hover:bg-primary-green hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground`,
-            className, isScrolled ? 'text-black' : 'text-white' 
+            className 
           )}
           {...props}
         >
