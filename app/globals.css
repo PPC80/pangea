@@ -14,6 +14,19 @@ body, html {
   @apply items-center justify-center min-h-screen overflow-x-hidden w-full;
 }
 
+.outer-section{
+  width: 100%; /* Full width */
+  padding: 60px 0; /* Top and bottom padding */
+}
+
+.inner-section{
+  width: 90%;
+  max-width: 1200px; /* Fixed maximum width */
+  margin: 0 auto; /* Center content horizontally */
+  box-sizing: border-box; /* Ensure padding does not affect width */
+  @apply max-w-[300px] xxssc:max-w-[400px] xssc:max-w-[670px] sm:max-w-[670px] md:max-w-[780px] smsc:max-w-[850px] smsc:w-[100%] mdsc:max-w-[1000px] lgsc:max-w-[1100px] xl:max-w-[1200px] 2xl:max-w-[1300px] /* TODO: ARREGLAR WIDTHS DEL INNER Y CARDS EN TESTI*/
+}
+
 .custom-btn {
   padding: 14px 18px;
 }
@@ -227,7 +240,7 @@ body, html {
   width: "100%";
   aspect-ratio: 15 / 1;
   margin: "0 auto";
-  
+
   }
   .shapedividers_com-7693::before{
   content:'';

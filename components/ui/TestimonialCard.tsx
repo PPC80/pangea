@@ -4,14 +4,14 @@ import { TestimonialCardProps } from '@/types';
 
 const TestimonialCard = ({ testimonial, touristName, travelDestination, tripDate, imageUrl, imageAlt, ratingImageUrl }: TestimonialCardProps) => {
   return (
-    <div className="flex flex-col w-full max-w-[400px] sm:max-w-md md:max-w-md lg:max-w-md mx-auto mb-6 overflow-hidden rounded-3xl shadow-lg">
+    <div className="flex flex-col justify-center w-full max-w-[400px] sm:max-w-md md:max-w-sm lg:max-w-[310px] xl:max-w-sm mx-auto mb-6 overflow-hidden rounded-3xl shadow-lg">
       {/* Image Section */}
       <div className='relative w-full h-48'>
         <Image
           src={imageUrl}
           alt={imageAlt}
           fill
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          // sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           className="object-cover"
         />
       </div>

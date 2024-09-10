@@ -4,7 +4,7 @@ import { CardProps } from '@/types';
 
 const Card = ({title, tourDurationNights, tourDurationDays, imageUrl, imageAlt}: CardProps) => {
   return (
-    <div className="relative w-full h-0 pb-[56.25%] sm:pb-[50%] md:pb-[40%] lg:pb-[60%] xl:pb-[80%] 2xl:pb-[80%] max-w-[450px] mx-auto overflow-hidden rounded-lg shadow-lg group">
+    <div className="relative w-full h-0 pb-[56.25%] sm:pb-[65%] md:pb-[65%] lg:pb-[70%] xl:pb-[80%] 2xl:pb-[80%] max-w-[300px] xxssc:max-w-[360px] xssc:max-w-[400px] mdsc:max-w-[800px] lgsc:max-w-[800px] mx-auto overflow-hidden rounded-lg shadow-lg group">
         <Image
           src={imageUrl}
           alt={imageAlt}

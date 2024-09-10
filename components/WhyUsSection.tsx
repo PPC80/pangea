@@ -25,21 +25,23 @@ const WhyUsSection = () => {
   ];
 
   return (
-    <section className='h-auto flex flex-col items-center px-4 sm:px-6 md:px-8 lg:px-12 mt-12 md:mt-18'>
-        <SectionTitle
-          title='¿Por qué viajar con nosotros?'
-          subtitle='Descrube por qué somos tu mejor opción'
-        />
+    <section className='outer-section h-auto flex flex-col items-center'>
+        <div className='inner-section'>
+          <SectionTitle
+            title='¿Por qué viajar con nosotros?'
+            subtitle='Descrube por qué somos tu mejor opción'
+          />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {features.map((feature, index) => (
-            <FeaturePoint 
-              key={index}
-              icon={feature.icon}
-              title={feature.title}
-              text={feature.text}
-            />
-          ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 place-items-center">
+            {features.map((feature, index) => (
+              <FeaturePoint 
+                key={index}
+                icon={feature.icon}
+                title={feature.title}
+                text={feature.text}
+              />
+            ))}
+          </div>
         </div>
     </section>
   )

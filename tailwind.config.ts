@@ -16,7 +16,12 @@ const config: Config = {
   		fontFamily: {
   			poppins: ["Poppins", "sans-serif"]
   		},
-		screens: {
+		  screens: {
+			'xxssc': '360px',
+			'xssc': '450px',
+			'smsc': '900px',
+			'mdsc': '1080px',
+			'lgsc': '1180px',
 			'2xl': '1750px',
 			'3xl': '1920px',
 		},

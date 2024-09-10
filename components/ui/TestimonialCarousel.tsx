@@ -73,12 +73,14 @@ function Responsive() {
     initialSlide: 0,
     accessibility: true,
     arrows: true,
+    //centerMode: true,
+    //centerPadding: "50px",
     responsive: [
       {
         breakpoint: 1680,
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
+          slidesToShow: 3,
+          slidesToScroll: 3,
           infinite: true,
           dots: true
         }
@@ -92,7 +94,7 @@ function Responsive() {
         }
       },
       {
-        breakpoint: 845,
+        breakpoint: 900,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1
@@ -102,7 +104,7 @@ function Responsive() {
   };
 
   return (
-    <div className="slider-container">
+    <div className="slider-container ">
       <Slider {...settings}>
         {testimonials.map((testimonial, index) => (
           <TestimonialCard

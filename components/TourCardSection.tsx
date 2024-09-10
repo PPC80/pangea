@@ -14,23 +14,26 @@ const TourCardSection = () => {
       ]
 
   return (
-    <section className='h-auto flex flex-col items-center px-5 sm:px-6 md:px-8 lg:px-12 mt-20 md:mt-24'>
-        <SectionTitle
-          title='Destinos Internacionales'
-          subtitle='Viajes que no te puedes perder'
-        />
+    <section className='outer-section *h-auto flex flex-col items-center *px-5 *sm:px-6 *md:px-8 *lg:px-12 *mt-20 *md:mt-24'>
+        <div className='inner-section flex flex-col h-auto items-center'>
+          <SectionTitle
+            title='Destinos Internacionales'
+            subtitle='Viajes que no te puedes perder'
+          />
 
-        <div className='grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 md:gap-8 w-full max-w-[1440px] justify-between'>
-            {tours.map((tour, index) => (
-                <Card
-                    key={index}
-                    title={tour.title}
-                    tourDurationNights={tour.nights}
-                    tourDurationDays={tour.days}
-                    imageUrl={tour.imageUrl}
-                    imageAlt={tour.imageAlt}
-                />
-            ))}
+          <div className='grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 md:gap-8 w-full max-w-[1440px] justify-between'>
+              {tours.map((tour, index) => (
+                  <Card
+                      key={index}
+                      title={tour.title}
+                      tourDurationNights={tour.nights}
+                      tourDurationDays={tour.days}
+                      imageUrl={tour.imageUrl}
+                      imageAlt={tour.imageAlt}
+                  />
+              ))}
+          </div>
+          
         </div>
     </section>
   )
