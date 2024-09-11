@@ -1,11 +1,8 @@
-'use client'
-
 import React from 'react'
 import Image from 'next/image'
 import CustomButton from './ui/CustomButton'
 
 const Hero = () => {
-  const handleScroll = () => {}
 
   return (
     <section className="outer-section mt-14 w-full items-center justify-center *px-5 *sm:flex-row *sm:space-x-12 *sm:px-12 *lg:mt-24">
@@ -24,7 +21,6 @@ const Hero = () => {
           <CustomButton
             title="Explora nuestros tours"
             containerStyles="bg-primary-green text-black text-xs font-semibold rounded max-w-[180px]"
-            handleClick={handleScroll}
           />
 
           <div className="hidden pl-60 lg:block">

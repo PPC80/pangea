@@ -28,6 +28,9 @@ import {
   CollapsibleTrigger,
   CollapsibleContent,
 } from '@/components/ui/collapsible'
+import { usePathname } from 'next/navigation';
+
+
 
 const components: { title: string; href: string }[] = [
   { title: 'América', href: '/' },
@@ -36,6 +39,10 @@ const components: { title: string; href: string }[] = [
 ]
 
 const Navbar = () => {
+  const pathname = usePathname();
+  // Determine if the current page is a subpage
+  const isSubpage = pathname !== '/';
+
   const isDesktop = useMediaQuery('(min-width: 900px)')
 
   const [isScrolled, setIsScrolled] = useState(false)
@@ -52,13 +59,13 @@ const Navbar = () => {
 
   return isDesktop ? (
     <header
-      className={`fixed left-0 top-0 z-20 w-full transition-all duration-300 ease-in-out ${isScrolled ? 'bg-white shadow-lg' : 'bg-transparent'} py-4`}
+      className={`fixed left-0 top-0 z-20 w-full transition-all duration-300 ease-in-out ${isSubpage || isScrolled ? 'bg-white shadow-lg' : 'bg-transparent'} py-4`}
     >
       <div className="inner-section">
         <div className="flex justify-between">
           <Link href="/">
             <Image
-              src={isScrolled ? '/logo-color-cr.png' : '/logo-white-cr.png'}
+              src={isSubpage || isScrolled ? '/logo-color-cr.png' : '/logo-white-cr.png'}
               alt="Pangea Travel Logo"
               width={334}
               height={210}
@@ -71,14 +78,11 @@ const Navbar = () => {
                 <NavigationMenuLink
                   asChild
                   className={cn(
-                    navigationMenuTriggerStyle(),
-                    isScrolled
-                      ? 'text-black hover:text-primary-green'
-                      : 'text-white hover:text-primary-green'
+                    navigationMenuTriggerStyle()
                   )}
                 >
                   <Link href="/">
-                    <NavigationMenuTrigger isScrolled={isScrolled}>
+                    <NavigationMenuTrigger isScrolled={isScrolled} isSubpage={isSubpage}>
                       Tours Internacionales
                     </NavigationMenuTrigger>
                   </Link>
@@ -103,6 +107,7 @@ const Navbar = () => {
                   asChild
                   className={cn(
                     navigationMenuTriggerStyle(),
+                    isSubpage ||
                     isScrolled
                       ? 'text-black hover:text-primary-green'
                       : 'text-white hover:text-primary-green'
@@ -116,12 +121,13 @@ const Navbar = () => {
                   asChild
                   className={cn(
                     navigationMenuTriggerStyle(),
+                    isSubpage ||
                     isScrolled
                       ? 'text-black hover:text-primary-green'
                       : 'text-white hover:text-primary-green'
                   )}
                 >
-                  <Link href="/">Conócenos</Link>
+                  <Link href="/about">Conócenos</Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
@@ -129,6 +135,7 @@ const Navbar = () => {
                   asChild
                   className={cn(
                     navigationMenuTriggerStyle(),
+                    isSubpage ||
                     isScrolled
                       ? 'text-black hover:text-primary-green'
                       : 'text-white hover:text-primary-green'

@@ -1,6 +1,7 @@
 import React from 'react'
 import Card from './ui/Card'
 import SectionTitle from './ui/SectionTitle'
+import CustomButton from './ui/CustomButton'
 
 const TourCardSection = () => {
 
@@ -32,6 +33,13 @@ const TourCardSection = () => {
                       imageAlt={tour.imageAlt}
                   />
               ))}
+          </div>
+
+          <div className='mt-8'>
+            <CustomButton
+              title="Explora todos los destinos"
+              containerStyles="bg-primary-green text-black text-xs font-semibold rounded max-w-[200px]"
+            />
           </div>
           
         </div>

@@ -46,11 +46,11 @@ const navigationMenuTriggerStyle = cva(
 
 const NavigationMenuTrigger = React.forwardRef<
   React.ElementRef<typeof NavigationMenuPrimitive.Trigger>,
-  React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Trigger> & { isScrolled: boolean }
->(({ className, children, isScrolled, ...props }, ref) => (
+  React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Trigger> & { isScrolled: boolean, isSubpage: boolean }
+>(({ className, children, isScrolled, isSubpage, ...props }, ref) => (
   <NavigationMenuPrimitive.Trigger
     ref={ref}
-    className={cn(navigationMenuTriggerStyle(), "group text-white hover:text-primary-green", isScrolled ? 'text-black hover:text-primary-green' : 'text-white hover:text-primary-green', className)}
+    className={cn(navigationMenuTriggerStyle(), "group text-white hover:text-primary-green", isSubpage || isScrolled ? 'text-black hover:text-primary-green' : 'text-white hover:text-primary-green', className)}
     {...props}
   >
     {children}{" "}

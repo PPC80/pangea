@@ -1,85 +1,109 @@
-import { MapPin, Phone, Mail } from 'lucide-react'
+import { Facebook, Instagram, Twitter, MapPin, Mail, Phone } from 'lucide-react'
 import Image from 'next/image'
-import React from 'react'
+import Link from 'next/link'
 
 const Footer = () => {
   return (
-    <footer className="outer-section flex flex-col bg-gradient-to-t from-primary-blue to-primary-green">
-      <div className="inner-section">
-        <div className="flex flex-col items-center justify-center gap-8 font-medium md:flex-row">
-          <div className="flex flex-col gap-8 md:w-[33.33%]">
+    <footer className="bg-gradient-to-b from-primary-green to-primary-blue px-4 py-8 text-white">
+      <div className="inner-section container mx-auto max-w-4xl">
+        <div className="flex flex-col gap-8 md:justify-between smsc:flex-row">
+          {/* Logo and Description */}
+          <div className="flex-1 space-y-4 md:w-1/3">
             <Image
               src="/logo-white-cr.png"
               alt="Pangea Travel Logo"
               width={300}
               height={20}
             />
-            <span className="text-center md:text-left">
+            <p className="text-sm">
               Somos tu agencia de viajes confianza para destinos únicos en todo
               el mundo y tours de fútbol
-            </span>
+            </p>
+            <div className="flex space-x-4">
+              <Link href="#" className="hover:text-teal-200">
+                <Facebook size={20} />
+              </Link>
+              <Link href="#" className="hover:text-teal-200">
+                <Instagram size={20} />
+              </Link>
+              <Link href="#" className="hover:text-teal-200">
+                <Twitter size={20} />
+              </Link>
+            </div>
           </div>
 
-          <address className="flex flex-col md:w-[33.33%] gap-3">
-            <div className="flex flex-row items-center gap-2">
-              <Image
-                src="/whatsapp-icon.svg"
-                alt="WhatsApp Logo"
-                width={24}
-                height={24}
-                className="h-6 w-6 flex-shrink-0"
-              />
-              <span>+593 99 99 99 99</span>
-            </div>
-            <div className="flex flex-row items-center gap-2">
-              <Mail className="h-6 w-6 flex-shrink-0" />
-              <span>comercial@pangeatravelecu.com</span>
-            </div>
-            <div className="flex flex-row items-start gap-2">
-              {/* Add a fixed width container for the icon */}
-              <div className="h-6 w-6 flex-shrink-0">
-                <MapPin className="h-full w-full" />
-              </div>
-              <span className="flex-1">
-                Av. Amazonas y Colón, Edificio España, Piso 4 Of. 46. Quito -
-                Ecuador
-              </span>
-            </div>
+          {/* Contact Info */}
+          <address className="flex-1 space-y-4 text-sm md:w-1/3 md:text-sm mdsc:text-base">
+            <h3 className="*text-lg font-semibold">Contacto</h3>
+            <ul className="space-y-2">
+              <li className="flex items-center space-x-2">
+                <Phone size={16} />
+                <span>+593 99 99 99 99</span>
+              </li>
+              <li className="flex items-center space-x-2">
+                <Mail size={16} className="mt-1 flex-shrink-0" />
+                <span>comercial@pangeatravelecu.com</span>
+              </li>
+              <li className="flex items-start space-x-2">
+                <MapPin size={16} className="mt-1 flex-shrink-0" />
+                <span>
+                  Av. Amazonas y Colón, Edificio España, Piso 4 Of. 48. Quito -
+                  Ecuador
+                </span>
+              </li>
+            </ul>
           </address>
 
-          <div className="flex flex-row md:w-[33.33%]">
-            <div className="flex flex-col">
-              <h3>Navegación</h3>
+          {/* Navigation and Services Combined */}
+          <div className="flex-1 text-sm md:w-1/3 md:justify-between md:text-sm smsc:flex smsc:flex-row mdsc:text-base">
+            {/* Navigation */}
+            <div className="space-y-4">
+              <h3 className="font-semibold">Navegación</h3>
               <nav>
-                <ul>
+                <ul className="space-y-2">
                   <li>
-                    <a href="/about">Inicio</a>
+                    <Link href="#" className="hover:text-teal-200">
+                      Inicio
+                    </Link>
                   </li>
                   <li>
-                    <a href="/services">Conócenos</a>
+                    <Link href="#" className="hover:text-teal-200">
+                      Conócenos
+                    </Link>
                   </li>
                   <li>
-                    <a href="/contact">Contáctanos</a>
+                    <Link href="#" className="hover:text-teal-200">
+                      Contáctanos
+                    </Link>
                   </li>
                 </ul>
               </nav>
             </div>
 
-            <div className="flex flex-col">
-              <h3>Nuestros Servicios</h3>
+            {/* Our Services */}
+            <div className="mt-8 space-y-4 smsc:mt-0">
+              <h3 className="*text-lg font-semibold">Nuestros Servicios</h3>
               <nav>
-                <ul>
+                <ul className="space-y-2">
                   <li>
-                    <a href="/about">Tours a América</a>
+                    <Link href="#" className="hover:text-teal-200">
+                      Tours a América
+                    </Link>
                   </li>
                   <li>
-                    <a href="/services">Tours a Europa</a>
+                    <Link href="#" className="hover:text-teal-200">
+                      Tours a Europa
+                    </Link>
                   </li>
                   <li>
-                    <a href="/contact">Tours a Asia</a>
+                    <Link href="#" className="hover:text-teal-200">
+                      Tours a Asia
+                    </Link>
                   </li>
                   <li>
-                    <a href="/privacy-policy">Tours de Fútbol</a>
+                    <Link href="#" className="hover:text-teal-200">
+                      Tours de Fútbol
+                    </Link>
                   </li>
                 </ul>
               </nav>
@@ -87,27 +111,8 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="flex justify-center">
-          <div className="flex flex-row">
-            <Image
-              src="/facebook-icon.svg"
-              alt="Whatsapp Logo"
-              width={20}
-              height={20}
-            />
-            <Image
-              src="/instagram-icon.svg"
-              alt="Whatsapp Logo"
-              width={20}
-              height={20}
-            />
-            <Image
-              src="/tiktok-icon.svg"
-              alt="Whatsapp Logo"
-              width={20}
-              height={20}
-            />
-          </div>
+        <div className="mt-8 border-t border-teal-400 pt-8 text-center text-sm">
+          <p>&copy; 2024 Pangea Travel S.A.S. Todos los derechos reservados.</p>
         </div>
       </div>
     </footer>
