@@ -151,11 +151,11 @@ const Navbar = () => {
     </header>
   ) : (
     <header
-      className={`fixed left-0 top-0 z-20 flex w-full flex-row items-center justify-between px-10 transition-all duration-300 ease-in-out ${isScrolled ? 'bg-white shadow-lg' : 'bg-transparent'} py-4`}
+      className={`fixed left-0 top-0 z-20 flex w-full flex-row items-center justify-between px-10 transition-all duration-300 ease-in-out ${isSubpage || isScrolled ? 'bg-white shadow-lg' : 'bg-transparent'} py-4`}
     >
       <Link href="/">
         <Image
-          src={isScrolled ? '/logo-color-cr.png' : '/logo-white-cr.png'}
+          src={isSubpage || isScrolled ? '/logo-color-cr.png' : '/logo-white-cr.png'}
           alt="Pangea Travel Logo"
           width={200}
           height={100}
@@ -164,7 +164,7 @@ const Navbar = () => {
       <Drawer direction="top">
         <DrawerTrigger asChild>
           <MenuIcon
-            color={isScrolled ? '#000000' : '#FFFFFF'}
+            color={isSubpage || isScrolled ? '#000000' : '#FFFFFF'}
             className="h-10 w-10"
           />
         </DrawerTrigger>

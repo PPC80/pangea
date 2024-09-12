@@ -33,7 +33,7 @@ const Footer = () => {
           </div>
 
           {/* Contact Info */}
-          <address className="flex-1 space-y-4 text-sm md:w-1/3 md:text-sm mdsc:text-base">
+          <address className="flex-1 space-y-4 text-sm md:w-1/3">
             <h3 className="*text-lg font-semibold">Contacto</h3>
             <ul className="space-y-2">
               <li className="flex items-center space-x-2">
@@ -55,7 +55,7 @@ const Footer = () => {
           </address>
 
           {/* Navigation and Services Combined */}
-          <div className="flex-1 text-sm md:w-1/3 md:justify-between md:text-sm smsc:flex smsc:flex-row mdsc:text-base">
+          <div className="flex-1 text-sm md:w-1/3 md:justify-between md:text-sm smsc:flex smsc:flex-row">
             {/* Navigation */}
             <div className="space-y-4">
               <h3 className="font-semibold">Navegación</h3>
@@ -111,7 +111,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-8 border-t border-teal-400 pt-8 text-center text-sm">
+        <div className="mt-8 border-t border-teal-400 pt-8 text-center text-xs">
           <p>&copy; 2024 Pangea Travel S.A.S. Todos los derechos reservados.</p>
         </div>
       </div>

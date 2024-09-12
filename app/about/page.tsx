@@ -1,10 +1,12 @@
 import React from 'react'
 import HeaderImage from '@/components/ui/HeaderImage'
+import AboutUsSection from '@/components/AboutUsSection'
 
-const page = () => {
+export default function AboutPage() {
   return (
-    <HeaderImage/>
+    <main>
+      <HeaderImage/>
+      <AboutUsSection/>
+    </main>
   )
 }
-
-export default page

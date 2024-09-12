@@ -3,13 +3,14 @@ import Image from 'next/image'
 
 const HeaderImage = () => {
   return (
-    <div className="relative mt-28 w-full max-h-[300px]">
+    <div className="relative mt-[90px] smsc:mt-[110px] w-full aspect-[3/1] smsc:aspect-[8/1]">
       <Image
         src="/pangeaheader.png"
-        alt="Pangea Travel Logo" //TODO: IMAGE UNDER NAVBAR RELATIVE BREAKS IT, IMAGE TOO TALL
-        layout="fill"
-
-        objectFit="cover"
+        alt="Pangea Travel Logo"
+        fill
+        sizes='(max-width: 768px) 100vw, 900px'
+        priority
+        className='object-cover'
       />
     </div>
   )
