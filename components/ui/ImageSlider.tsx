@@ -33,7 +33,7 @@ export default function ImageSlider() {
         <div className='shapedividers_com-5787'></div> 
       </div>
 
-      <section aria-label="Image Slider" className="relative w-full h-[500px] lg:h-full">
+      <section aria-label="Image Slider" className="relative w-full h-[900px]">
 
       <Link href="#after-image-slider-controls" className="skip-link">
         Skip Image Slider Controls

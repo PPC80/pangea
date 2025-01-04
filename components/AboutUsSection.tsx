@@ -7,8 +7,8 @@ export default function AboutUsSection() {
     <section className="outer-section bg-gradient-to-b from-background to-secondary/20">
       <div className="inner-section container px-4 md:px-6">
         <div className="flex flex-col items-center text-center mb-12">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Sobre Pangea Travel</h2>
-          <p className="mt-4 text-xl text-muted-foreground max-w-[700px]">
+          <h2 className="text-xl font-bold tracking-tighter sm:text-3xl">Sobre Pangea Travel</h2>
+          <p className="mt-4 text-lg text-muted-foreground max-w-[700px]">
             Inspirando aventuras, creando recuerdos y conectando culturas
           </p>
         </div>
@@ -82,25 +82,6 @@ export default function AboutUsSection() {
               </CardContent>
             </AboutCard>
           ))}
-        </div>
-
-        <div className="mt-12 relative overflow-hidden rounded-xl">
-          <Image
-            src="/landscape1.jpg"
-            width={1200}
-            height={400}
-            alt="Pangea Travel Destinos"
-            className="object-cover w-full h-[300px] md:h-[400px]"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-background/30 to-background/10 flex items-center">
-            <div className="p-14">
-              <h3 className="text-2xl font-bold mb-2">Comienza tu aventura hoy</h3>
-              <p className="text-muted-foreground mb-4">Permítenos ayudarte a crear recuerdos que duren para siempre</p>
-              <button className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary-green text-black hover:bg-teal-400 h-10 px-4 py-2">
-                Explora nuestros destinos
-              </button>
-            </div>
-          </div>
         </div>
       </div>
     </section>

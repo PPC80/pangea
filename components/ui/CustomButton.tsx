@@ -9,7 +9,7 @@ const CustomButton = ({title, containerStyles, handleClick}: CustomButtonProps) 
     <button
         disabled={false}
         type={"button"}
-        className={`custom-btn ${containerStyles}`}
+        className={`inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary-green text-black hover:bg-teal-400 h-10 px-4 py-2 ${containerStyles}`}
         onClick={ () => {} }
     >
         <span>
